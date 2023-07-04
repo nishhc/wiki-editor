@@ -6,7 +6,7 @@ import WebVitals from "@/components/home/web-vitals";
 import ComponentGrid from "@/components/home/component-grid";
 import Image from "next/image";
 import { nFormatter } from "@/lib/utils";
-import { Timer } from "lucide-react";
+import { Link, Timer } from "lucide-react";
 
 export default async function Home() {
   // days until october 1st 2023
@@ -48,14 +48,14 @@ export default async function Home() {
           className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
           style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
         >
-          <a
+          <Link
             className="group flex max-w-fit items-center justify-center space-x-2 rounded-full border border-black bg-black px-5 py-2 text-sm text-white transition-colors hover:bg-white hover:text-black"
-            href={DEPLOY_URL}
+            href="/signin"
             target="_blank"
             rel="noopener noreferrer"
           >
             <p>Sign In</p>
-          </a>
+          </Link>
           <a
             className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
             href="https://github.com/steven-tey/precedent"
