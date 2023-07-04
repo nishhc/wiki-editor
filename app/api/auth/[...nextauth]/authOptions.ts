@@ -8,6 +8,7 @@ const authOptions: NextAuthOptions = {
     clientSecret: process.env.GITLAB_CLIENT_SECRET as string
     }),
   ],
+  secret: process.env.SECRET,
 };
 
 export default authOptions;
