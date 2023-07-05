@@ -29,10 +29,17 @@ export default function Editor({ params }: { params: { slug: string } }) {
     setDataLoaded(true);
     console.log("markdown", markdown);
   };
+
+  const [mounted, setMounted] = useState(false);
   useEffect(() => {
     console.log("use effect");
+    setMounted(true);
     getMarkdown();
   }, []);
+
+  if (!mounted) {
+    return null; // return this null to avoid hydration errors
+  }
 
   const jsxComponentDescriptors: JsxComponentDescriptor[] = [
     {
