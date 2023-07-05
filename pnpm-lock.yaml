@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@mdxeditor/editor':
-    specifier: ^0.3.0
-    version: 0.3.0(@lezer/common@1.0.3)(@types/react-dom@18.0.10)(@types/react@18.0.26)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6)
+    specifier: ^0.4.1
+    version: 0.4.1(@lezer/common@1.0.3)(@types/react-dom@18.0.10)(@types/react@18.0.26)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6)
   '@radix-ui/react-popover':
     specifier: ^1.0.2
     version: 1.0.6(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
@@ -652,8 +652,8 @@ packages:
       '@lezer/highlight': 1.1.6
     dev: false
 
-  /@mdxeditor/editor@0.3.0(@lezer/common@1.0.3)(@types/react-dom@18.0.10)(@types/react@18.0.26)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6):
-    resolution: {integrity: sha512-5y4bY//NGln7ECLvAPs5OmkAlsXC+sBNMyWoPS14zR0jNXQgLmYIEufNEJ2lw4f12ZYy0Ntu28btzsJ/r7LAlQ==}
+  /@mdxeditor/editor@0.4.1(@lezer/common@1.0.3)(@types/react-dom@18.0.10)(@types/react@18.0.26)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6):
+    resolution: {integrity: sha512-Rc3rHYIl935xgW2GtzSycCKyN5pjI+B2hoVmq2ki0lfg3BtwrYPNaofLY0yi/bvj5ti4ctuMPYlrAvQtS3zkKA==}
     engines: {node: '>=16'}
     peerDependencies:
       react: ^18.2.0

@@ -11,7 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mdxeditor/editor": "^0.3.0",
+    "@mdxeditor/editor": "^0.4.1",
     "@radix-ui/react-popover": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.2",
     "@types/node": "18.11.18",

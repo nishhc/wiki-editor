@@ -1,0 +1,25 @@
+---
+export interface Props {
+	src: string;
+    figure:string;
+}
+
+const { title1, title2, content1, content2, headingLevel, image1, image2 } = Astro.props;
+---
+
+<div class="flex justify-between">
+    <div class="mr-4">
+        {headingLevel == "h1" && <h1>{title1}</h1>}
+        {headingLevel == "h2" && <h2>{title1}</h2>}
+        {headingLevel == "h3" && <h3>{title1}</h3>}
+        <p>{content1}</p>
+        <img src={image1} alt="">
+    </div>
+    <div>
+        {headingLevel == "h1" && <h1>{title1}</h1>}
+        {headingLevel == "h2" && <h2>{title1}</h2>}
+        {headingLevel == "h3" && <h3>{title1}</h3>}
+        <p>{content2}</p>
+        <img src={image2} alt="">
+    </div>
+</div>

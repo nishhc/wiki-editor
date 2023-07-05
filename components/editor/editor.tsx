@@ -1,13 +1,17 @@
 "use client";
 import { saveMarkdown } from "@/lib/actions";
-import { MDXEditor } from "@mdxeditor/editor";
+import { JsxComponentDescriptor, MDXEditor } from "@mdxeditor/editor";
 import { decode } from "js-base64";
 import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import styles from "../styles.module.css";
+import "@mdxeditor/editor/style.css";
+
+//components
+import Wip from "../md_components/Wip";
 
 export default function Editor({ params }: { params: { slug: string } }) {
   const [markdown, setMarkdown] = useState("");
+  const [dataLoaded, setDataLoaded] = useState(false);
   const [cookies, setCookie] = useCookies(["gitlab_pat"]);
 
   const getMarkdown = async () => {
@@ -22,12 +26,22 @@ export default function Editor({ params }: { params: { slug: string } }) {
     const json = await request.json();
     const markdown = decode(json.content);
     setMarkdown(markdown);
+    setDataLoaded(true);
     console.log("markdown", markdown);
   };
   useEffect(() => {
     console.log("use effect");
     getMarkdown();
   }, []);
+
+  const jsxComponentDescriptors: JsxComponentDescriptor[] = [
+    {
+      name: "Wip",
+      kind: "text",
+      props: [],
+      source: "../md_components/Wip",
+    },
+  ];
 
   return (
     <>
@@ -37,22 +51,26 @@ export default function Editor({ params }: { params: { slug: string } }) {
           {/* save button */}
           <button
             onClick={() => {
-              saveMarkdown(markdown, params.slug);
+              console.log(markdown);
+              saveMarkdown(markdown, params.slug, cookies.gitlab_pat);
             }}
             className="rounded-full border border-black bg-black p-1.5 px-4 text-sm text-white transition-all hover:bg-white hover:text-black"
           >
             Save
           </button>
         </div>
-
-        <div>
-          <MDXEditor
-            markdown={markdown}
-            onChange={(markdown) => {
-              setMarkdown(markdown);
-            }}
-          />
-        </div>
+        {dataLoaded && (
+          <div className="relative">
+            <MDXEditor
+              className="prose"
+              markdown={markdown}
+              onChange={(markdown) => {
+                setMarkdown(markdown);
+              }}
+              jsxComponentDescriptors={jsxComponentDescriptors}
+            />
+          </div>
+        )}
       </div>
     </>
   );
