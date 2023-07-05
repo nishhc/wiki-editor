@@ -66,7 +66,7 @@ export default function Editor({ params }: { params: { slug: string } }) {
             Save
           </button>
         </div>
-        {dataLoaded && (
+        {/* {dataLoaded && (
           <div className="relative">
             <MDXEditor
               className="prose"
@@ -77,7 +77,7 @@ export default function Editor({ params }: { params: { slug: string } }) {
               jsxComponentDescriptors={jsxComponentDescriptors}
             />
           </div>
-        )}
+        )} */}
       </div>
     </>
   );
