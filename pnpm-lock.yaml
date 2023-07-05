@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@mdxeditor/editor':
-    specifier: file:/Users/ryandu/Downloads/editor-076ff92e52606eaeea9b6c12f38a1eec3affc445/mdxeditor-editor-0.0.0-development.tgz
-    version: file:../../../../Downloads/editor-076ff92e52606eaeea9b6c12f38a1eec3affc445/mdxeditor-editor-0.0.0-development.tgz(@lezer/common@1.0.3)(@types/react-dom@18.0.10)(@types/react@18.0.26)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6)
+    specifier: ^0.3.0
+    version: 0.3.0(@lezer/common@1.0.3)(@types/react-dom@18.0.10)(@types/react@18.0.26)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6)
   '@radix-ui/react-popover':
     specifier: ^1.0.2
     version: 1.0.6(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
@@ -650,6 +650,67 @@ packages:
     dependencies:
       '@lezer/common': 1.0.3
       '@lezer/highlight': 1.1.6
+    dev: false
+
+  /@mdxeditor/editor@0.3.0(@lezer/common@1.0.3)(@types/react-dom@18.0.10)(@types/react@18.0.26)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6):
+    resolution: {integrity: sha512-5y4bY//NGln7ECLvAPs5OmkAlsXC+sBNMyWoPS14zR0jNXQgLmYIEufNEJ2lw4f12ZYy0Ntu28btzsJ/r7LAlQ==}
+    engines: {node: '>=16'}
+    peerDependencies:
+      react: ^18.2.0
+      react-dom: ^18.2.0
+    dependencies:
+      '@codemirror/lang-markdown': 6.2.0
+      '@codemirror/state': 6.2.1
+      '@codesandbox/sandpack-react': 2.6.9(@lezer/common@1.0.3)(react-dom@18.2.0)(react@18.2.0)
+      '@lexical/clipboard': 0.11.1(lexical@0.11.1)
+      '@lexical/code': 0.11.1(lexical@0.11.1)
+      '@lexical/link': 0.11.1(lexical@0.11.1)
+      '@lexical/list': 0.11.1(lexical@0.11.1)
+      '@lexical/markdown': 0.11.1(@lexical/clipboard@0.11.1)(@lexical/selection@0.11.1)(lexical@0.11.1)
+      '@lexical/plain-text': 0.11.1(@lexical/clipboard@0.11.1)(@lexical/selection@0.11.1)(@lexical/utils@0.11.1)(lexical@0.11.1)
+      '@lexical/react': 0.11.1(lexical@0.11.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6)
+      '@lexical/rich-text': 0.11.1(@lexical/clipboard@0.11.1)(@lexical/selection@0.11.1)(@lexical/utils@0.11.1)(lexical@0.11.1)
+      '@lexical/selection': 0.11.1(lexical@0.11.1)
+      '@lexical/utils': 0.11.1(lexical@0.11.1)
+      '@radix-ui/colors': 0.1.9
+      '@radix-ui/react-dialog': 1.0.4(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-icons': 1.3.0(react@18.2.0)
+      '@radix-ui/react-popover': 1.0.6(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-select': 1.2.2(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toggle-group': 1.0.4(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-toolbar': 1.0.4(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
+      '@radix-ui/react-tooltip': 1.0.6(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
+      classnames: 2.3.2
+      downshift: 7.6.0(react@18.2.0)
+      hast-util-raw: 8.0.0
+      hast-util-sanitize: 4.1.0
+      hast-util-to-html: 8.0.4
+      js-yaml: 4.1.0
+      lexical: 0.11.1
+      mdast-util-directive: 2.2.4
+      mdast-util-from-markdown: 1.3.1
+      mdast-util-frontmatter: 1.0.1
+      mdast-util-gfm-table: 1.0.7
+      mdast-util-mdx: 2.0.1
+      mdast-util-mdx-jsx: 2.1.4
+      mdast-util-to-hast: 12.3.0
+      mdast-util-to-markdown: 1.5.0
+      micromark-extension-directive: 2.2.0
+      micromark-extension-frontmatter: 1.1.0
+      micromark-extension-gfm-table: 1.0.7
+      micromark-extension-mdxjs: 1.0.1
+      react: 18.2.0
+      react-diff-view: 3.0.3(prop-types@15.8.1)(react@18.2.0)
+      react-dom: 18.2.0(react@18.2.0)
+      react-hook-form: 7.45.1(react@18.2.0)
+      unidiff: 1.0.4
+    transitivePeerDependencies:
+      - '@lezer/common'
+      - '@types/react'
+      - '@types/react-dom'
+      - prop-types
+      - supports-color
+      - yjs
     dev: false
 
   /@motionone/animation@10.15.1:
@@ -6099,68 +6160,4 @@ packages:
 
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
-    dev: false
-
-  file:../../../../Downloads/editor-076ff92e52606eaeea9b6c12f38a1eec3affc445/mdxeditor-editor-0.0.0-development.tgz(@lezer/common@1.0.3)(@types/react-dom@18.0.10)(@types/react@18.0.26)(prop-types@15.8.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6):
-    resolution: {integrity: sha512-lywNd9jQiGvHjk1O92yFcewKY6nGQrneqiGgkE3Yxwoj7n55SmFeVL59YpkyiKhX19XXqsV+1aI4U899w8zqHg==, tarball: file:../../../../Downloads/editor-076ff92e52606eaeea9b6c12f38a1eec3affc445/mdxeditor-editor-0.0.0-development.tgz}
-    id: file:../../../../Downloads/editor-076ff92e52606eaeea9b6c12f38a1eec3affc445/mdxeditor-editor-0.0.0-development.tgz
-    name: '@mdxeditor/editor'
-    version: 0.0.0-development
-    engines: {node: '>=16'}
-    peerDependencies:
-      react: ^18.2.0
-      react-dom: ^18.2.0
-    dependencies:
-      '@codemirror/lang-markdown': 6.2.0
-      '@codemirror/state': 6.2.1
-      '@codesandbox/sandpack-react': 2.6.9(@lezer/common@1.0.3)(react-dom@18.2.0)(react@18.2.0)
-      '@lexical/clipboard': 0.11.1(lexical@0.11.1)
-      '@lexical/code': 0.11.1(lexical@0.11.1)
-      '@lexical/link': 0.11.1(lexical@0.11.1)
-      '@lexical/list': 0.11.1(lexical@0.11.1)
-      '@lexical/markdown': 0.11.1(@lexical/clipboard@0.11.1)(@lexical/selection@0.11.1)(lexical@0.11.1)
-      '@lexical/plain-text': 0.11.1(@lexical/clipboard@0.11.1)(@lexical/selection@0.11.1)(@lexical/utils@0.11.1)(lexical@0.11.1)
-      '@lexical/react': 0.11.1(lexical@0.11.1)(react-dom@18.2.0)(react@18.2.0)(yjs@13.6.6)
-      '@lexical/rich-text': 0.11.1(@lexical/clipboard@0.11.1)(@lexical/selection@0.11.1)(@lexical/utils@0.11.1)(lexical@0.11.1)
-      '@lexical/selection': 0.11.1(lexical@0.11.1)
-      '@lexical/utils': 0.11.1(lexical@0.11.1)
-      '@radix-ui/colors': 0.1.9
-      '@radix-ui/react-dialog': 1.0.4(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
-      '@radix-ui/react-icons': 1.3.0(react@18.2.0)
-      '@radix-ui/react-popover': 1.0.6(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
-      '@radix-ui/react-select': 1.2.2(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
-      '@radix-ui/react-toggle-group': 1.0.4(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
-      '@radix-ui/react-toolbar': 1.0.4(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
-      '@radix-ui/react-tooltip': 1.0.6(@types/react-dom@18.0.10)(@types/react@18.0.26)(react-dom@18.2.0)(react@18.2.0)
-      classnames: 2.3.2
-      downshift: 7.6.0(react@18.2.0)
-      hast-util-raw: 8.0.0
-      hast-util-sanitize: 4.1.0
-      hast-util-to-html: 8.0.4
-      js-yaml: 4.1.0
-      lexical: 0.11.1
-      mdast-util-directive: 2.2.4
-      mdast-util-from-markdown: 1.3.1
-      mdast-util-frontmatter: 1.0.1
-      mdast-util-gfm-table: 1.0.7
-      mdast-util-mdx: 2.0.1
-      mdast-util-mdx-jsx: 2.1.4
-      mdast-util-to-hast: 12.3.0
-      mdast-util-to-markdown: 1.5.0
-      micromark-extension-directive: 2.2.0
-      micromark-extension-frontmatter: 1.1.0
-      micromark-extension-gfm-table: 1.0.7
-      micromark-extension-mdxjs: 1.0.1
-      react: 18.2.0
-      react-diff-view: 3.0.3(prop-types@15.8.1)(react@18.2.0)
-      react-dom: 18.2.0(react@18.2.0)
-      react-hook-form: 7.45.1(react@18.2.0)
-      unidiff: 1.0.4
-    transitivePeerDependencies:
-      - '@lezer/common'
-      - '@types/react'
-      - '@types/react-dom'
-      - prop-types
-      - supports-color
-      - yjs
     dev: false
