@@ -66,18 +66,18 @@ export default function Editor({ params }: { params: { slug: string } }) {
             Save
           </button>
         </div>
-        {/* {dataLoaded && (
+        {dataLoaded && (
           <div className="relative">
-            <MDXEditor
+            {/* <MDXEditor
               className="prose"
               markdown={markdown}
               onChange={(markdown) => {
                 setMarkdown(markdown);
               }}
               jsxComponentDescriptors={jsxComponentDescriptors}
-            />
+            /> */}
           </div>
-        )} */}
+        )}
       </div>
     </>
   );
