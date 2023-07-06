@@ -1,11 +1,22 @@
-import { useCookies } from "react-cookie";
-import Editor from "../../../components/editor/editor";
-import { decode } from "js-base64";
+import dynamic from "next/dynamic";
+
+const Editor = dynamic(
+  () =>
+    import("../../../components/editor/editor").then(
+      (module) => module.default,
+    ),
+  {
+    ssr: false,
+    loading: () => <div>Loading...</div>,
+  },
+);
 
 export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <>
-      <Editor params={params} />
+      {/* <Editor params={params} /> */}
+
+      <Editor />
     </>
   );
 }
