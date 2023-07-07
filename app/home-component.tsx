@@ -57,7 +57,7 @@ export default function HomeComponent() {
           >
             <Balancer>
               An intuitive, easy to use alternative to wiki freeze stress.
-              Brought to you by the wiki committee. heh
+              Brought to you by the wiki committee.
             </Balancer>
           </p>
           <div
