@@ -1,7 +1,7 @@
 "use server"
 
 export async function saveMarkdown(markdown: string, page: string, pat: string) {
-    await fetch(
+    const res = await fetch(
         `https://gitlab.igem.org/api/v4/projects/1866/repository/commits`,
         {
           method: 'POST',
@@ -22,10 +22,9 @@ export async function saveMarkdown(markdown: string, page: string, pat: string) 
                 ]
           })
         },
-      ).then((res) => {
-        console.log(res)
-      }).catch((err) => {
-        console.log(err)
-        });
+      )
+
+    console.log("response", res.status, res.statusText)
+    return res.status == 201 ? "sucess" : "error status " + res.status + ": " + res.statusText
 
 }
