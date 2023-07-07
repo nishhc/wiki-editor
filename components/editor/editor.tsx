@@ -7,6 +7,7 @@ import { useCookies } from "react-cookie";
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
 import { serialize } from "next-mdx-remote/serialize";
+import NoSSR from "./react-no-ssr";
 
 import MDEditor, { commands } from "@uiw/react-md-editor";
 import Wip from "../components/md_components/Wip";
@@ -58,12 +59,39 @@ export default function Editor() {
   }, []);
 
   console.log("hello");
-  const [mdxSource, setMdxSource] = useState(`
+  const [mdxSource, setMdxSource] = useState(
+    process.env.NODE_ENV === "development"
+      ? `
   /*@jsxRuntime automatic @jsxImportSource react*/
-const {Fragment: _Fragment, jsxDEV: _jsxDEV} = arguments[0];
+  const {Fragment: _Fragment, jsx: _jsx} = arguments[0];
+  const {useMDXComponents: _provideComponents} = arguments[0];
+  function _createMdxContent(props) {
+    return _jsx(_Fragment, {}, undefined, false, {
+      fileName: "<source.js>",
+      lineNumber: 1,
+      columnNumber: 1
+    }, this);
+  }
+  function MDXContent(props = {}) {
+    const {wrapper: MDXLayout} = Object.assign({}, _provideComponents(), props.components);
+    return MDXLayout ? _jsx(MDXLayout, Object.assign({}, props, {
+      children: _jsx(_createMdxContent, props, undefined, false, {
+        fileName: "<source.js>"
+      }, this)
+    }), undefined, false, {
+      fileName: "<source.js>"
+    }, this) : _createMdxContent(props);
+  }
+  return {
+    default: MDXContent
+  };
+  `
+      : `
+  /*@jsxRuntime automatic @jsxImportSource react*/
+const {Fragment: _Fragment, jsx: _jsx} = arguments[0];
 const {useMDXComponents: _provideComponents} = arguments[0];
 function _createMdxContent(props) {
-  return _jsxDEV(_Fragment, {}, undefined, false, {
+  return _jsx(_Fragment, {}, undefined, false, {
     fileName: "<source.js>",
     lineNumber: 1,
     columnNumber: 1
@@ -71,8 +99,8 @@ function _createMdxContent(props) {
 }
 function MDXContent(props = {}) {
   const {wrapper: MDXLayout} = Object.assign({}, _provideComponents(), props.components);
-  return MDXLayout ? _jsxDEV(MDXLayout, Object.assign({}, props, {
-    children: _jsxDEV(_createMdxContent, props, undefined, false, {
+  return MDXLayout ? _jsx(MDXLayout, Object.assign({}, props, {
+    children: _jsx(_createMdxContent, props, undefined, false, {
       fileName: "<source.js>"
     }, this)
   }), undefined, false, {
@@ -82,7 +110,8 @@ function MDXContent(props = {}) {
 return {
   default: MDXContent
 };
-`);
+`,
+  );
 
   const components = { Wip };
 
@@ -152,12 +181,14 @@ return {
           />
           <div className=" mx-2 w-1/2 px-6">
             <div className="prose">
-              <MDXRemote
-                compiledSource={mdxSource}
-                components={components}
-                scope={undefined}
-                frontmatter={undefined}
-              />
+              <NoSSR>
+                <MDXRemote
+                  compiledSource={mdxSource}
+                  components={components}
+                  scope={undefined}
+                  frontmatter={undefined}
+                />
+              </NoSSR>
             </div>
           </div>
         </div>

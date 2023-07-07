@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mdx-js/runtime": "^1.6.22",
     "@radix-ui/react-popover": "^1.0.2",
     "@radix-ui/react-tooltip": "^1.0.2",
     "@types/node": "18.11.18",
@@ -25,6 +26,7 @@
     "eslint-config-next": "13.1.1",
     "focus-trap-react": "^10.0.2",
     "framer-motion": "^8.4.2",
+    "fs": "0.0.1-security",
     "js-base64": "^3.7.5",
     "lucide-react": "0.105.0-alpha.4",
     "ms": "^2.1.3",
@@ -35,6 +37,7 @@
     "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",
+    "react-no-ssr": "^1.1.0",
     "react-wrap-balancer": "^0.3.0",
     "remark-mdx": "^2.3.0",
     "typescript": "4.9.4",
