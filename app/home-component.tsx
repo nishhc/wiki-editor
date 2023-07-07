@@ -4,6 +4,18 @@ import { Timer } from "lucide-react";
 import Link from "next/link";
 import { useSignInModal } from "@/components/layout/sign-in-modal";
 import { useCookies } from "react-cookie";
+import { useState } from "react";
+import NoSSR from "@/components/editor/react-no-ssr";
+import {
+  motion,
+  useMotionTemplate,
+  useMotionValue,
+  useTransform,
+} from "framer-motion";
+
+function randomNumber(min, max) {
+  return Math.random() * (max - min) + min;
+}
 
 export default function HomeComponent() {
   // days until october 1st 2023
@@ -13,6 +25,11 @@ export default function HomeComponent() {
   );
   const { SignInModal, setShowSignInModal } = useSignInModal();
   const [cookies, setCookie] = useCookies(["gitlab_pat"]);
+  const [rain, setRain] = useState(false);
+
+  const [x, setX] = useState(0);
+  const [y, setY] = useState(0);
+  // const transform = useMotionTemplate`translate(${x.get()}px, ${y.get()}px)`;
 
   return (
     <>
@@ -47,30 +64,58 @@ export default function HomeComponent() {
             className="mx-auto mt-6 flex animate-fade-up items-center justify-center space-x-5 opacity-0"
             style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
           >
-            {/* bug here */}
-            {cookies.gitlab_pat != undefined ? (
-              <div>
-                <Link
-                  href="/dashboard"
-                  className="flex max-w-fit items-center justify-center space-x-2 rounded-full border bg-black px-5 py-2 text-sm text-white shadow-md transition-colors hover:border-gray-800 hover:bg-white hover:text-black"
-                >
-                  Continue to Dashboard
-                </Link>
-              </div>
-            ) : (
-              <div>
-                <button
-                  className="flex max-w-fit items-center justify-center space-x-2 rounded-full border bg-black px-5 py-2 text-sm text-white shadow-md transition-colors hover:border-gray-800 hover:bg-white hover:text-black"
-                  onClick={() => setShowSignInModal(true)}
-                >
-                  Sign In
-                </button>
-              </div>
-            )}
-
-            <button className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800">
+            <NoSSR>
+              {cookies.gitlab_pat != undefined ? (
+                <div>
+                  <Link
+                    href="/dashboard"
+                    className="flex max-w-fit items-center justify-center space-x-2 rounded-full border bg-black px-5 py-2 text-sm text-white shadow-md transition-colors hover:border-gray-800 hover:bg-white hover:text-black"
+                  >
+                    Continue to Dashboard
+                  </Link>
+                </div>
+              ) : (
+                <div>
+                  <button
+                    className="flex max-w-fit items-center justify-center space-x-2 rounded-full border bg-black px-5 py-2 text-sm text-white shadow-md transition-colors hover:border-gray-800 hover:bg-white hover:text-black"
+                    onClick={() => setShowSignInModal(true)}
+                  >
+                    Sign In
+                  </button>
+                </div>
+              )}
+            </NoSSR>
+            <motion.button
+              onMouseEnter={() => {
+                // get random number in range
+                console.log("hover");
+                if (x !== 0) {
+                  setX(0);
+                  setY(0);
+                } else {
+                  setX(
+                    randomNumber(
+                      window.innerWidth * -0.3,
+                      window.innerWidth * 0.3,
+                    ),
+                  );
+                  setY(
+                    randomNumber(
+                      window.innerHeight * -0.3,
+                      window.innerHeight * 0.3,
+                    ),
+                  );
+                }
+              }}
+              // style={{
+              //   x,
+              //   y,
+              // }}
+              animate={{ x: x, y: y }}
+              className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+            >
               <span className="hidden sm:inline-block">Cry about it</span>
-            </button>
+            </motion.button>
           </div>
         </div>
       </div>
