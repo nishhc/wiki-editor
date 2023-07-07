@@ -86,6 +86,9 @@ export default function HomeComponent() {
               )}
             </NoSSR>
             <motion.button
+              onClick={() => {
+                alert("Congrats! You clicked the button! Now go cry about it.");
+              }}
               onMouseEnter={() => {
                 // get random number in range
                 console.log("hover");
