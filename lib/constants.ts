@@ -1,2 +1,2 @@
 
-export const pages = ["attributions", "contribution", "description", "engineering", "hardware", "human-practices", "inclusivity", "index", "model"];
+export const pages = ["attributions", "contribution", "description", "engineering", "hardware", "human-practices", "inclusivity", "model", "eRCA", "inclusivity", "saftey", "parts-library", "parts-collection", "notebook", "results", "engineering-sucess", "contribution", "protein-purification", "experiments", "measurement","poc","labpilot","cadmir"];
