@@ -1,4 +1,5 @@
 "use client";
+import TwoColPara, { Props } from "../components/md_components/TwoColPara";
 import { saveMarkdown } from "@/lib/actions";
 import { decode } from "js-base64";
 import { Suspense, useContext, useEffect, useState } from "react";
@@ -113,7 +114,10 @@ return {
 `,
   );
 
-  const components = { Wip };
+  const components = {
+    Wip,
+    TwoColPara,
+  };
 
   const serializeUpdatedSource = () => {
     const tempMdxSource = serialize(markdown, {
