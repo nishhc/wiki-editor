@@ -226,7 +226,9 @@ import Wip from "../components/md_components/Wip";`}
               that is displayed and inside the parentheses is the link:
             </p>
             <pre>
-              <code>{"[see Attributions](lambert-ga/attributions)"}</code>
+              <code>
+                {"[see Software](https://2023.igem.wiki/lambert-ga/software/)"}
+              </code>
             </pre>
 
             <h2>Custom Components</h2>
