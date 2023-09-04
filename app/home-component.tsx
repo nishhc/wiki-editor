@@ -27,7 +27,7 @@ export default function HomeComponent() {
       (1000 * 60 * 60 * 24),
   );
   const { SignInModal, setShowSignInModal } = useSignInModal();
-  const [cookies, setCookie] = useCookies(["gitlab_pat"]);
+  const [cookies, setCookie, removeCookie] = useCookies(["gitlab_pat"]);
   const [rain, setRain] = useState(false);
 
   const [x, setX] = useState(0);
@@ -75,14 +75,22 @@ export default function HomeComponent() {
             >
               <NoSSR>
                 {cookies.gitlab_pat != undefined ? (
-                  <div>
+                  <>
                     <Link
                       href="/dashboard"
                       className="flex max-w-fit items-center justify-center space-x-2 rounded-full border bg-black px-5 py-2 text-sm text-white shadow-md transition-colors hover:border-gray-800 hover:bg-white hover:text-black"
                     >
                       Continue to Dashboard
                     </Link>
-                  </div>
+                    <button
+                      className="flex max-w-fit items-center justify-center space-x-2 rounded-full border border-gray-300 bg-white px-5 py-2 text-sm text-gray-600 shadow-md transition-colors hover:border-gray-800"
+                      onClick={() => {
+                        removeCookie("gitlab_pat");
+                      }}
+                    >
+                      Sign Out
+                    </button>
+                  </>
                 ) : (
                   <div>
                     <button
