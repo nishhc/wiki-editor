@@ -186,9 +186,7 @@ import Wip from "../components/md_components/Wip";`}
             <h3>Basic Markdown Syntax</h3>
             <p>
               Refer to{" "}
-              <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">
-                this page
-              </a>{" "}
+              <a href="https://www.markdownguide.org/cheat-sheet/">this page</a>{" "}
               for a cheatsheet on basic markdown syntax.
             </p>
             <h3>Special cases</h3>
@@ -200,14 +198,23 @@ import Wip from "../components/md_components/Wip";`}
               </a>{" "}
               from iGEM HQ to upload pictures and videos through the{" "}
               <a href="https://uploads.igem.org/">upload portal</a> and put the
-              link of the image in an <code>img</code> tag like so:{" "}
+              link of the image in an <code>Image</code> tag like so:{" "}
             </p>
             <pre>
               <code>
                 {
-                  "<img src='https://uploads.igem.org/wiki/2021/team/igem-lambert/attributions/igem-logo.png' />"
+                  "<Image src='https://uploads.igem.org/wiki/2021/team/igem-lambert/attributions/igem-logo.png' caption='Figure 1. blah blah' />"
                 }
               </code>
+            </pre>
+
+            <h4>References</h4>
+            <p>
+              We made a special <code>References</code> component to properlly
+              format everything with hanging indents. Use it like so:
+            </p>
+            <pre>
+              <code>{"<Reference> Your reference text </Reference>"}</code>
             </pre>
 
             <h4>Links to other pages</h4>
@@ -240,6 +247,8 @@ import Wip from "../components/md_components/Wip";`}
 | Component | Description | Usage |
 | --- | --- | --- |
 | Wip | Displays a work in progress banner | \`<Wip/>\` |
+| Image | Displays an image with a caption | \`<Image src='url.com/image.png' caption='Figure 1. blah blah' />\` |
+| Reference | Displays a reference with proper hanging indent | \`<Reference> Your reference text </Reference>\` |
 
 
 more components coming soon

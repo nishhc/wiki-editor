@@ -1,5 +1,7 @@
 "use client";
 import TwoColPara, { Props } from "../components/md_components/TwoColPara";
+import Image from "../components/md_components/Image";
+import Reference from "../components/md_components/Reference";
 import { saveMarkdown } from "@/lib/actions";
 import { decode } from "js-base64";
 import { Suspense, useContext, useEffect, useState } from "react";
@@ -117,6 +119,8 @@ return {
   const components = {
     Wip,
     TwoColPara,
+    Image,
+    Reference,
   };
 
   const serializeUpdatedSource = () => {
