@@ -219,17 +219,14 @@ import Wip from "../components/md_components/Wip";`}
 
             <h4>Links to other pages</h4>
             <p>
-              use <code>{`<a>`}</code> tags to add links to other pages. and set
-              the <code>href</code> equal to{" "}
-              <code>
-                lambert-ga/<i>name-of-page</i>
-              </code>{" "}
-              like so:
+              use special markdown links to link to other pages. You may ONLY
+              link to other pages in our wiki. Links to outside websites will
+              disqualify us and we will be flagged as cheating. Link to other
+              pages like so where anything in the square brackets are the text
+              that is displayed and inside the parentheses is the link:
             </p>
             <pre>
-              <code>
-                {"<a href='lambert-ga/attributions'>Attributions</a>"}
-              </code>
+              <code>{"[see Attributions](lambert-ga/attributions)"}</code>
             </pre>
 
             <h2>Custom Components</h2>
