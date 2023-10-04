@@ -1,7 +1,7 @@
 "use client";
 import ReactMarkdown from "react-markdown";
 import Balancer from "react-wrap-balancer";
-import { Timer } from "lucide-react";
+import { AlertTriangle, Timer } from "lucide-react";
 import Link from "next/link";
 import { useSignInModal } from "@/components/layout/sign-in-modal";
 import { useCookies } from "react-cookie";
@@ -23,7 +23,7 @@ function randomNumber(min: number, max: number) {
 export default function HomeComponent() {
   // days until october 1st 2023
   const daysTilWikiFreeze = Math.floor(
-    (new Date("2023-10-01").getTime() - new Date().getTime()) /
+    (new Date("2023-10-13").getTime() - new Date().getTime()) /
       (1000 * 60 * 60 * 24),
   );
   const { SignInModal, setShowSignInModal } = useSignInModal();
@@ -46,11 +46,11 @@ export default function HomeComponent() {
         <div className="containerv relative flex w-full flex-col items-center justify-center">
           <div className="z-10 w-full max-w-xl px-5 xl:px-0">
             <span
-              className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 rounded-full bg-blue-100 px-7 py-2  hover:bg-blue-200"
+              className="mx-auto mb-5 flex max-w-fit animate-fade-up items-center justify-center space-x-2 rounded-full bg-red-100 px-7 py-2  hover:bg-red-200"
               style={{ animationDelay: "0.15s", animationFillMode: "forwards" }}
             >
-              <Timer className="days h-5 w-5 text-[#1d9bf0]" />
-              <p className="text-sm font-semibold text-[#1d9bf0]">
+              <AlertTriangle className="days h-5 w-5 text-[#F01D1D]" />
+              <p className="text-sm font-semibold text-[#F01D1D]">
                 Wiki Freeze in {daysTilWikiFreeze} days
               </p>
             </span>
