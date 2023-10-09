@@ -15,6 +15,7 @@ import NoSSR from "./react-no-ssr";
 import MDEditor, { commands } from "@uiw/react-md-editor";
 import Wip from "../components/md_components/Wip";
 import { useDebouncedCallback } from "use-debounce";
+import gfm from "remark-gfm";
 
 const MDXRemote = dynamic(
   () => import("next-mdx-remote").then((mod) => mod.MDXRemote),
@@ -126,6 +127,7 @@ return {
   const serializeUpdatedSource = () => {
     const tempMdxSource = serialize(markdown, {
       mdxOptions: {
+        remarkPlugins: [gfm],
         development: process.env.NODE_ENV === "development",
       },
     }).then((res) => {
