@@ -11,7 +11,7 @@ export const pages = [
 // "rca-optimization", 
 // "rca-expansion",
 "rca",
-"saftey", 
+"safety", 
 "parts-library", 
 "parts-collection", 
 "notebook", 
