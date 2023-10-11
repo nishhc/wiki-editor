@@ -17,8 +17,9 @@ import Wip from "../components/md_components/Wip";
 import { useDebouncedCallback } from "use-debounce";
 import gfm from "remark-gfm";
 
-import rehypeKatex from "rehype-katex";
-import remarkMath from "remark-math";
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 
 const MDXRemote = dynamic(
   () => import("next-mdx-remote").then((mod) => mod.MDXRemote),
@@ -131,7 +132,7 @@ return {
     const tempMdxSource = serialize(markdown, {
       mdxOptions: {
         remarkPlugins: [gfm, remarkMath],
-        rehypePlugins: [rehypeKatex],
+        // rehypePlugins: [rehypeKatex],
         development: process.env.NODE_ENV === "development",
       },
     }).then((res) => {
@@ -182,6 +183,7 @@ return {
             Save
           </button>
         </div>
+        
         <div className="m-0 my-6 flex h-screen " data-color-mode="light">
           <MDEditor
             value={markdown}
