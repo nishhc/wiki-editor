@@ -17,6 +17,9 @@ import Wip from "../components/md_components/Wip";
 import { useDebouncedCallback } from "use-debounce";
 import gfm from "remark-gfm";
 
+import rehypeKatex from "rehype-katex";
+import remarkMath from "remark-math";
+
 const MDXRemote = dynamic(
   () => import("next-mdx-remote").then((mod) => mod.MDXRemote),
   { ssr: false },
@@ -127,7 +130,8 @@ return {
   const serializeUpdatedSource = () => {
     const tempMdxSource = serialize(markdown, {
       mdxOptions: {
-        remarkPlugins: [gfm],
+        remarkPlugins: [gfm, remarkMath],
+        rehypePlugins: [rehypeKatex],
         development: process.env.NODE_ENV === "development",
       },
     }).then((res) => {
