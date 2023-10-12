@@ -17,9 +17,9 @@ import Wip from "../components/md_components/Wip";
 import { useDebouncedCallback } from "use-debounce";
 import gfm from "remark-gfm";
 
-import remarkMath from 'remark-math';
-import rehypeKatex from 'rehype-katex';
-import 'katex/dist/katex.min.css';
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
+import "katex/dist/katex.min.css";
 
 const MDXRemote = dynamic(
   () => import("next-mdx-remote").then((mod) => mod.MDXRemote),
@@ -42,7 +42,7 @@ export default function Editor() {
 
   const getMarkdown = () => {
     const request = fetch(
-      `https://gitlab.igem.org/api/v4/projects/1866/repository/files/src%2Fpages%2F${slug}.mdx?ref=main`,
+      `https://gitlab.igem.org/api/v4/projects/1866/repository/files/${slug}.mdx?ref=main`,
       {
         headers: {
           "PRIVATE-TOKEN": cookies.gitlab_pat,
@@ -183,7 +183,7 @@ return {
             Save
           </button>
         </div>
-        
+
         <div className="m-0 my-6 flex h-screen " data-color-mode="light">
           <MDEditor
             value={markdown}

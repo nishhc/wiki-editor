@@ -13,13 +13,16 @@ export default function Dashboard() {
           </p>
         </div>
 
-        {pages.map((page) => (
+        {pages.map((page, index) => (
           <div
-            key={page}
+            key={index}
             className="border-t-[0.5px] border-gray-300 px-4 py-2 text-center text-gray-600"
           >
-            <Link className="hover:text-gray-900" href={`/dashboard/${page}`}>
-              {page}
+            <Link
+              className="hover:text-gray-900"
+              href={`/dashboard/${page.path}`}
+            >
+              {page.name}
             </Link>
           </div>
         ))}
