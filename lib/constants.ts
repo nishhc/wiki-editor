@@ -11,7 +11,7 @@ export const pages = [
 { path: "src%2Fpages%2Fmodel", name: "Model" },
 // { path: "rca-optimization", name: "RCA Optimization" },
 // { path: "rca-expansion", name: "RCA Expansion" },
-{ path: "src%2Fpages%2Frca", name: "RCA" },
+// { path: "src%2Fpages%2Frca", name: "RCA" },
 { path: "src%2Fpages%2Fsafety", name: "Safety" },
 { path: "src%2Fpages%2Fparts-library", name: "Parts Library" },
 { path: "src%2Fpages%2Fparts-collection", name: "Parts Collection" },
