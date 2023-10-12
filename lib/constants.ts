@@ -20,9 +20,14 @@ export const pages = [
 "protein-purification", 
 "experiments", 
 "measurement",
-"poc",
+// "poc",
 "hardware",
-"software"
+"software",
+"RCAERCA",
+"RCAInclusivity",
+"RCAOptimization",
+"RCAOutputs",
+"RCAOverview2022"
 
 
 
