@@ -206,12 +206,15 @@ import Wip from "../components/md_components/Wip";`}
               </a>{" "}
               from iGEM HQ to upload pictures and videos through the{" "}
               <a href="https://uploads.igem.org/">upload portal</a> and put the
-              link of the image in an <code>Image</code> tag like so:{" "}
+              link of the image in an <code>Image</code> tag like below. You can
+              also customize the width of the image by setting size to
+              &quot;sm&quot;, &quot;md&quot;, &quot;lg&quot;, &quot;xl&quot;, or
+              &quot;2xl&quot;. It&apos;s &quot;lg&quot; by default.
             </p>
             <pre>
               <code>
                 {
-                  "<Image src='https://uploads.igem.org/wiki/2021/team/igem-lambert/attributions/igem-logo.png' caption='Figure 1. blah blah' />"
+                  "<Image src='https://uploads.igem.org/wiki/2021/team/igem-lambert/attributions/igem-logo.png' size='lg' caption='Figure 1. blah blah' />"
                 }
               </code>
             </pre>
@@ -254,8 +257,9 @@ import Wip from "../components/md_components/Wip";`}
 | Component | Description | Usage |
 | --- | --- | --- |
 | Wip | Displays a work in progress banner | \`<Wip/>\` |
-| Image | Displays an image with a caption | \`<Image src='url.com/image.png' caption='Figure 1. blah blah' />\` |
+| Image | Displays an image with a caption | \`<Image src='url.com/image.png' size="lg" caption='Figure 1. blah blah' />\` |
 | Reference | Displays a reference with proper hanging indent | \`<Reference> Your reference text </Reference>\` |
+| Image Carousel | Displays an image carousel | \`<ImageCarousel client:load caption="here are some images" images={[ "image1.png", "image2.png", ]} />\` |
 
 
 more components coming soon

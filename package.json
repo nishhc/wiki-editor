@@ -38,6 +38,7 @@
     "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
     "react-markdown": "^8.0.7",
+    "react-responsive-carousel": "^3.2.23",
     "react-wrap-balancer": "^0.3.0",
     "rehype-katex": "^7.0.0",
     "remark-gfm": "^3.0.1",
