@@ -16,7 +16,7 @@ export async function saveMarkdown(markdown: string, page: string, pat: string) 
             "actions": [    
                 {
                     "action": "update",
-                    "file_path": "src/pages/" + page + ".mdx",
+                    "file_path": page + ".mdx",
                     "content": markdown
                   },
                 ]

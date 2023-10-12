@@ -41,6 +41,10 @@ export default function Editor() {
   const [cookies, setCookie] = useCookies(["gitlab_pat"]);
 
   const getMarkdown = () => {
+    console.log(
+      "request: ",
+      `https://gitlab.igem.org/api/v4/projects/1866/repository/files/${slug}.mdx?ref=main`,
+    );
     const request = fetch(
       `https://gitlab.igem.org/api/v4/projects/1866/repository/files/${slug}.mdx?ref=main`,
       {
