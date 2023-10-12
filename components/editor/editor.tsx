@@ -1,5 +1,7 @@
 "use client";
 import TwoColPara, { Props } from "../components/md_components/TwoColPara";
+import ImageCarousel from "../components/md_components/ImageCarousel";
+
 import Image from "../components/md_components/Image";
 import Reference from "../components/md_components/Reference";
 import { saveMarkdown } from "@/lib/actions";
@@ -41,12 +43,8 @@ export default function Editor() {
   const [cookies, setCookie] = useCookies(["gitlab_pat"]);
 
   const getMarkdown = () => {
-    console.log(
-      "request: ",
-      `https://gitlab.igem.org/api/v4/projects/1866/repository/files/${slug}.mdx?ref=main`,
-    );
     const request = fetch(
-      `https://gitlab.igem.org/api/v4/projects/1866/repository/files/${slug}.mdx?ref=main`,
+      `https://gitlab.igem.org/api/v4/projects/1866/repository/files/src%2Fpages%2F${slug}.mdx?ref=main`,
       {
         headers: {
           "PRIVATE-TOKEN": cookies.gitlab_pat,
@@ -130,6 +128,7 @@ return {
     TwoColPara,
     Image,
     Reference,
+    ImageCarousel,
   };
 
   const serializeUpdatedSource = () => {
