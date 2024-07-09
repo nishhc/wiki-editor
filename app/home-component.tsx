@@ -23,7 +23,7 @@ function randomNumber(min: number, max: number) {
 export default function HomeComponent() {
   // days until october 1st 2023
   const daysTilWikiFreeze = Math.floor(
-    (new Date("2023-10-13").getTime() - new Date().getTime()) /
+    (new Date("2024-10-06").getTime() - new Date().getTime()) /
       (1000 * 60 * 60 * 24),
   );
   const { SignInModal, setShowSignInModal } = useSignInModal();
