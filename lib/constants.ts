@@ -3,7 +3,7 @@ export const pages = [
 "attributions", 
 "cell-free",
 "contribution",
-"cripsri",
+"crispri",
 "crisprigfp",
 "crispriinha",
 "description",
