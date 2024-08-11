@@ -8,6 +8,7 @@ import { saveMarkdown } from "@/lib/actions";
 import { decode } from "js-base64";
 import { Suspense, useContext, useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
+import rehypeMathjax from "rehype-mathjax";
 
 import dynamic from "next/dynamic";
 import { usePathname } from "next/navigation";
@@ -135,7 +136,7 @@ return {
     const tempMdxSource = serialize(markdown, {
       mdxOptions: {
         remarkPlugins: [gfm, remarkMath],
-        // rehypePlugins: [rehypeKatex],
+        rehypePlugins: [rehypeMathjax],
         development: process.env.NODE_ENV === "development",
       },
     }).then((res) => {
