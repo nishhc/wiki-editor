@@ -22,6 +22,6 @@ export const pages = [
 "thermo",
 "toeholds",
 "toeholdsdesign",
-"toeholdsgfp",
-"toeholdsinha"
+"toeholdsexperimentation",
+"toeholdsoverview",
 ];
