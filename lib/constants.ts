@@ -4,6 +4,8 @@ export const pages = [
 "cell-free",
 "contribution",
 "crispri",
+"crispridesign",
+"crisprioverview",
 "crisprigfp",
 "crispriinha",
 "description",
@@ -25,5 +27,6 @@ export const pages = [
 "toeholds",
 "toeholdsdesign",
 "toeholdsexperimentation",
+"toeholdsinha",
 "toeholdsoverview",
 ];
