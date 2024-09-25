@@ -22,6 +22,7 @@ import gfm from "remark-gfm";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 import "katex/dist/katex.min.css";
+import ImageRow from "../components/md_components/ImageRow";
 
 const MDXRemote = dynamic(
   () => import("next-mdx-remote").then((mod) => mod.MDXRemote),
@@ -129,6 +130,7 @@ return {
     Image,
     Reference,
     ImageCarousel,
+    ImageRow,
   };
 
   const serializeUpdatedSource = () => {
