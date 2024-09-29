@@ -15,7 +15,6 @@ export const pages = [
 "hp-healthcare",
 "implementation",
 "labpilot",
-"models",
 "notebook",
 "parts-library",
 "results",
