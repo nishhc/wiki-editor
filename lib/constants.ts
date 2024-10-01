@@ -14,7 +14,7 @@ export const pages = [
 "hp-agriculture",
 "hp-healthcare",
 "implementation",
-"labpilot",
+"hardware",
 "notebook",
 "parts-library",
 "results",
