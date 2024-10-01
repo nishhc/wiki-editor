@@ -16,6 +16,7 @@ import NoSSR from "./react-no-ssr";
 
 import MDEditor, { commands } from "@uiw/react-md-editor";
 import Wip from "../components/md_components/Wip";
+import PDFAccordian from "../components/md_components/PDFAccordian";
 import { useDebouncedCallback } from "use-debounce";
 import gfm from "remark-gfm";
 
@@ -131,6 +132,7 @@ return {
     Reference,
     ImageCarousel,
     ImageRow,
+    PDFAccordian,
   };
 
   const serializeUpdatedSource = () => {
