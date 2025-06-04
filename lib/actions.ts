@@ -2,7 +2,7 @@
 
 export async function saveMarkdown(markdown: string, page: string, pat: string) {
     const res = await fetch(
-        `https://gitlab.igem.org/api/v4/projects/3027/repository/commits`,
+        `https://gitlab.igem.org/api/v4/projects/3503/repository/commits`,
         {
           method: 'POST',
           headers: {
